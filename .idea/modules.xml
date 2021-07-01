@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/knows-portal/knows-portal.iml" filepath="$PROJECT_DIR$/knows-portal/knows-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kowns.iml" filepath="$PROJECT_DIR$/kowns.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kowns-generator/kowns-generator.iml" filepath="$PROJECT_DIR$/kowns-generator/kowns-generator.iml" />
+    </modules>
+  </component>
+</project>
