@@ -71,5 +71,7 @@ public class Answer implements Serializable {
     @TableField("accept_status")
     private Integer acceptStatus;
 
+    @TableField(exist = false)
+    private Comment comments;
 
 }

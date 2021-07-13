@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上载演示</title>
+    <script src="bower_components/jquery/dist/jquery.min.js" ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<form id="demoForm" method="post"
+      enctype="multipart/form-data"
+      action="/upload/file" >
+    <div>
+        <label>上传文件
+            <input id="imageFile" type="file" name="imageFile">
+        </label>
+    </div>
+    <button type="submit">上传文件</button>
+</form>
+<img id="image" src=""  alt="">
+<script>
+    //文件上传的方法,表单提交时运行的方法
+    $("#demoForm").submit(function () {
+        let files= document.getElementById("imageFile").files;
+        //判断这个
+        if(files.length>0){
+            //从数组中获取文件
+            let file=files[0];
+            //调用上传文件的方法
+            uploadImage(file);
+        }else {
+            alert("请选择文件后再提交!");
+        }
+        //阻止表单提交，页面不跳转
+        return false;
+    })
+    //表单提交的方法 上传实际操作的方法
+    function uploadImage() {
+        let form=new FormData();
+        //imagesFile和控制器方法
+        form.append("imageFile",file);
+        axios.get({
+            url:"/upload/file",
+            method:"post",
+            data:form
+        }).then(function (response) {
+            console.log(response.data);
+            $("#image").attr('src',response.data)
+        })
+    }
+</script>
+</body>
+</html>

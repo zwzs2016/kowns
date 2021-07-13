@@ -1,0 +1,13 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: sys-service
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        file-extension: properties
+        group: DEFAULT_GROUP
+      discovery:
+        server-addr: localhost:8848
