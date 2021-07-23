@@ -33,6 +33,8 @@
         <module>knows-commons</module>
         <module>knows-faq</module>
         <module>knows-auth</module>
+        <module>knows-search</module>
+        <module>kafka</module>
     </modules>
     <dependencies>
         <dependency>

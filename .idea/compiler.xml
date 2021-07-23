@@ -10,22 +10,26 @@
         <module name="knows-client" />
         <module name="knows-commons" />
         <module name="geteway" />
+        <module name="kafka" />
         <module name="knows-sys" />
         <module name="knows-resource" />
         <module name="knows-portal" />
         <module name="knows-faq" />
         <module name="knows-auth" />
+        <module name="knows-search" />
         <module name="kowns-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="geteway" target="1.8" />
+      <module name="kafka" target="1.8" />
       <module name="knows-auth" target="1.8" />
       <module name="knows-client" target="1.8" />
       <module name="knows-commons" target="1.8" />
       <module name="knows-faq" target="1.8" />
       <module name="knows-portal" target="1.8" />
       <module name="knows-resource" target="1.8" />
+      <module name="knows-search" target="1.8" />
       <module name="knows-sys" target="1.8" />
       <module name="kowns" target="1.8" />
       <module name="kowns-generator" target="1.8" />
@@ -34,12 +38,14 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="geteway" options="-parameters" />
+      <module name="kafka" options="-parameters" />
       <module name="knows-auth" options="-parameters" />
       <module name="knows-client" options="-parameters" />
       <module name="knows-commons" options="-parameters" />
       <module name="knows-faq" options="-parameters" />
       <module name="knows-portal" options="-parameters" />
       <module name="knows-resource" options="-parameters" />
+      <module name="knows-search" options="-parameters" />
       <module name="knows-sys" options="-parameters" />
       <module name="kowns" options="-parameters" />
       <module name="kowns-generator" options="-parameters" />

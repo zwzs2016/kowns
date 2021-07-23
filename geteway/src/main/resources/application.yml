@@ -30,3 +30,7 @@ spring:
           uri: lb://faq-service
           predicates:
             - Path=/v2/**
+        - id: gateway-auth
+          uri: lb://auth-service
+          predicates:
+            - Path=/auth/**

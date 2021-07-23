@@ -1,24 +1,16 @@
 server:
-  port: 9001
+  port: 8002
 spring:
   application:
     name: sys-service
   cloud:
     nacos:
       config:
+        # 我们没有配置namespace,默认就是public
+        # 我们可以不配置 Data Id 默认去解析当前项目名称.类型名称的配置文件
+        # 默认的Data Id生成为 sys-service.properties
         server-addr: localhost:8848
-    gateway:
+        file-extension: properties # 要确定引用配置文件的类型不能写错
+        group: DEFAULT_GROUP       # 配置当前信息的group的名称
       discovery:
-        locator:
-          enabled: true  #是否与服务注册于发现组件结合，通过 serviceId 转发到具体的服务
-          lower-case-service-id: true
-      routes:  # 开始路由配置
-        - id: gateway-resource #路由配置的名称和具体服务无关
-          # resource-server路由的服务器的名称
-          # lb: 是 Load Balance(负载均衡)的缩写
-          uri: lb://resource-server
-          # 路由的路径设置
-          # 表示如果访问localhost:9000/image/xxxxxxx
-          # 那么就相当于访问resource-server服务中的内容了!
-          predicates:
-            - Path=/image/**
+        server-addr: localhost:8848 # 将当前项目注册到nacos

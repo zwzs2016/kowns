@@ -1,6 +1,5 @@
 package cn.tedu.knows.sys.mapper;
 
-
 import cn.tedu.knows.commons.model.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;

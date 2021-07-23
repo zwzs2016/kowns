@@ -12,9 +12,10 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
-import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
-import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
-import org.springframework.security.oauth2.provider.token.TokenStore;
+import org.springframework.security.oauth2.provider.token.*;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import java.util.Arrays;
 
 @Configuration
 //下面注解表示当前类是配置Oauth2的核心配置类
@@ -51,6 +52,8 @@ public class AuthorizationServer extends
     private TokenStore tokenStore;
     @Autowired
     private ClientDetailsService clientDetailsService;
+    @Autowired
+    private JwtAccessTokenConverter accessTokenConverter;
     //这个方法会在上面方法中调用
     //可以尝试将@Bean去掉看影响
     @Bean
@@ -61,6 +64,9 @@ public class AuthorizationServer extends
         services.setSupportRefreshToken(true);
         //设置令牌生成策略
         services.setTokenStore(tokenStore);
+        //设置令牌增强(固定用法)
+        TokenEnhancerChain chain=new TokenEnhancerChain();
+        chain.setTokenEnhancers(Arrays.asList(accessTokenConverter));
         //设置令牌有效期
         services.setAccessTokenValiditySeconds(3600);//1小时
         services.setRefreshTokenValiditySeconds(3600*72);//3天

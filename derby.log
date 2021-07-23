@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Jul 12 20:03:03 CST 2021:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017a-9a99-678f-000014afb7d0 
+Mon Jul 19 19:21:07 CST 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017a-be7f-8740-000014714f70 
 on database directory D:\server\nacos-server-1.4.2\nacos\data\derby-data with class loader org.springframework.boot.loader.LaunchedURLClassLoader@6433a2 
 Loaded from jar:file:/D:/server/nacos-server-1.4.2/nacos/target/nacos-server.jar!/BOOT-INF/lib/derby-10.14.2.0.jar!/
 java.vendor=Oracle Corporation

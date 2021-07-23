@@ -1,0 +1,11 @@
+GET http://localhost:9200
+
+###
+POST http://localhost:9200/_analyze
+Content-Type: application/json
+
+{
+  "text": "罗技激光无线游戏鼠标",
+  "analyzer":"ik_smart"
+
+}
